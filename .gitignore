@@ -1,2 +1,2 @@
 ## don't commit envs
-./py_patterns/.venv/**
+./py_patterns/.venv
