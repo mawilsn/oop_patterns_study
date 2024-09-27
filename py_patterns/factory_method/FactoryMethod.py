@@ -1,5 +1,5 @@
 from __future__ import annotations
-from abc import ABC, abstractmethod 
+from abc import ABC, abstractmethod
 
 
 class Creator(ABC):
@@ -15,7 +15,7 @@ class Creator(ABC):
         Creator may provide some default
         """
         raise NotImplementedError(f"This method is not implemented{factory_method.__name__}")
-    
+
     def some_operation(self) -> str:
         """
         Creators Primary responsiblity isn't creating products. Usually, contains some core business logic
@@ -29,14 +29,13 @@ class Creator(ABC):
         # Now use the product
         result = f"creator: the same code has just done {product}"
         return result
-    
+
     def another_operation(self) -> None:
 
         print("Another method")
-    
 
-    
 # Concreate creators override the factory method inorder to change thre resulting product
+
 
 class ConcreteCreator1(Creator):
     """
@@ -72,6 +71,7 @@ class ConcreteProduct2(Product):
     def operation(self) -> str:
         return "{Result of the ConcreteProduct2}"
 
+
 def client_code(creator: Creator) -> None:
     """
     The client code works with an instance of a concrete creator, through its vase interface
@@ -91,7 +91,6 @@ def main():
     print("\n")
     print("App: Launched with the ConcreteCreator2.")
     a = client_code(ConcreteCreator2())
-    
 
 
 if __name__ == "__main__":
